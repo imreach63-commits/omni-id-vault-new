@@ -6,14 +6,14 @@ workflows:
     environment:
       flutter: stable
     scripts:
-      - name: Generate Android project files
+      - name: Initialize Flutter Project
         script: |
-          flutter create . --platforms=android --org com.example.omniidvault
+          flutter create . --org com.example.omniidvault --project-name omni_id_vault
       - name: Get Flutter packages
         script: |
           flutter pub get
       - name: Build APK
         script: |
-          flutter build apk --release --no-pub
+          flutter build apk --release
     artifacts:
       - build/app/outputs/flutter-apk/*.apk
