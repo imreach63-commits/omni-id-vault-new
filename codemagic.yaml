@@ -6,11 +6,9 @@ workflows:
     environment:
       flutter: stable
     scripts:
-      - name: Create Android directory if missing
+      - name: Generate Android project files
         script: |
-          if [ ! -d "android" ]; then
-            flutter create . --platforms=android --org com.example.omniidvault
-          fi
+          flutter create . --platforms=android --org com.example.omniidvault
       - name: Get Flutter packages
         script: |
           flutter pub get
